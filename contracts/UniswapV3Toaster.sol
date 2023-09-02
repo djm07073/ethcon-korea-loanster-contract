@@ -31,6 +31,24 @@ contract UniswapV3Toaster is
         menu = _menu;
     }
 
+    function exactInputSingleBySelf(
+        ExactInputBySelfParams memory params
+    ) external payable returns (uint256 amountOut) {
+        amountOut = exactInputInternal(
+            params.amountIn,
+            address(this),
+            0,
+            SwapCallbackData({
+                path: abi.encodePacked(
+                    params.tokenIn,
+                    params.fee,
+                    params.tokenOut
+                ),
+                payer: address(this)
+            })
+        );
+    }
+
     function getSwapAmountForAddLiquidity(
         SwapAmountForAddLiquidityParams calldata params
     )
