@@ -10,6 +10,7 @@ export const BLOCK_TIMES = {
   8453: 2,
   42161: 0.3, // arbitrum
   80001: 5, // mumbai
+  59144: 12, // linea
 };
 
 export const CONFIGS = {
@@ -439,5 +440,37 @@ export const CONFIGS = {
     pancakeswapV3: { meta: {} },
     sushiswap: { meta: {} },
     curve: {},
+  },
+  linea: {
+    chainId: 59144,
+    blockTime: BLOCK_TIMES[59144],
+    pancakeswapV3: {
+      chainId: 59144,
+      projectName: "Pancakeswap V3",
+      feeTiers: [100, 500, 2500, 10000],
+
+      factory: "0x1BB72E0CbbEA93c08f535fc7856E0338D7F7a8aB",
+      wETH: "0xe5D7C2a44FfDDf6b295A15c148167daaAf5Cf34f",
+      meta: {
+        MasterChefV3: "0x22E2f236065B780FA33EC8C4E58b99ebc8B55c57",
+        SmartRouter: "0x678Aa4bF4E210cf2166753e054d5b7c31cc7fa86",
+        SmartRouterHelper: "0xdAecee3C08e953Bd5f89A5Cc90ac560413d709E3",
+        MixedRouteQuoterV1: "0x678Aa4bF4E210cf2166753e054d5b7c31cc7fa86",
+        QuoterV2: "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+        TokenValidator: "0x864ED564875BdDD6F421e226494a0E7c071C06f8",
+        PancakeV3Factory: "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+        SwapRouter: "0x1b81D678ffb9C0263b24A97847620C99d213eB14",
+        V3Migrator: "0xbC203d7f83677c7ed3F7acEc959963E7F4ECC5C2",
+        TickLens: "0x9a489505a00cE272eAa5e07Dba6491314CaE3796",
+        NonfungibleTokenPositionDescriptor:
+          "0x3D00CdB4785F0ef20C903A13596e0b9B2c652227",
+        NonfungiblePositionManager:
+          "0x46A15B0b27311cedF172AB29E4f4766fbE7F4364",
+        PancakeInterfaceMulticall: "0xac1cE734566f390A94b00eb9bf561c2625BF44ea",
+        PancakeV3LmPoolDeployer: "0x769449da49D1Eb1FF44A6B366BE46960fDF46Ad6",
+        Menu: "",
+        Toaster: "",
+      },
+    },
   },
 };

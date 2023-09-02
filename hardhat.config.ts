@@ -158,6 +158,11 @@ export default {
       url: "https://arbitrum.meowrpc.com",
       accounts: [DEPLOY],
     },
+    linea: {
+      chainId: 59144,
+      url: "https://linea.drpc.org",
+      accounts: [DEPLOY],
+    },
   },
   solidity: {
     version: "0.7.6",
